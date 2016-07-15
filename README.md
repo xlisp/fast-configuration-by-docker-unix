@@ -1,6 +1,5 @@
-**Table of Contents** *generated with [autotoc](https://github.com/Wilfred/autotoc)*
+# fast configuration by docker: 让Docker每秒build十次, 每一次build成功的结果作为下一次build的Form, 如此递归build, 直到Fixed错误为止
 
-- [fast configuration by docker: 让Docker每秒build十次, 每一次build成功的结果作为下一次build的Form, 如此递归build, 直到Fixed错误为止](#fast-configuration-by-docker-dockerbuild-buildbuildform-build-fixed)
   - [服务端Dockerfile的生成](#dockerfile)
   - [客户端获取服务端的Dockerfile开始build](#dockerfilebuild)
   - [有意思的一些脚本集合](#)
@@ -16,7 +15,7 @@
     - [10. drm 的事件: 多参数即高阶化,处理多事件的能力](#10-drm--)
     - [11. 完整的DockerBuild的 事件记录: 处理事件流是高阶函数基本目标,这个参数过程需要提取于事件记录](#11-dockerbuild--)
 
-# fast configuration by docker: 让Docker每秒build十次, 每一次build成功的结果作为下一次build的Form, 如此递归build, 直到Fixed错误为止
+
 
 ## 服务端Dockerfile的生成
 * 用Elisp脚本的宏定义生成Dockerfile
