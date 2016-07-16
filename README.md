@@ -1,7 +1,7 @@
 # fast configuration by docker: 让Docker每秒build十次, 每一次build成功的结果作为下一次build的Form, 如此递归build, 直到Fixed错误为止
 
   - [服务端Dockerfile的生成](#服务端dockerfile的生成)
-  - [客户端获取服务端的Dockerfile开始build](##客户端获取服务端的dockerfile开始build)
+  - [客户端获取服务端的Dockerfile开始build](#客户端获取服务端的dockerfile开始build)
   - [有意思的一些脚本集合](#有意思的一些脚本集合)
     - [1. 检测Nginx配置文件的改动事件, 改动则重启Nginx](#1-检测nginx配置文件的改动事件-改动则重启nginx)
     - [2. 如果 exec 退出 则 stop: exec退出就垃圾回收为零](#2--exec---stop-exec)
