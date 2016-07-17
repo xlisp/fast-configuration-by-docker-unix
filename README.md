@@ -140,3 +140,7 @@ drm () {
 ### 11. 完整的DockerBuild的 事件记录: 处理事件流是高阶函数基本目标,这个参数过程需要提取于事件记录
 
 /sections/show/2413
+```bash
+$ docker events #==> docker events | sed 's/\(.*\)) \(.*\)/\2/' | sort | uniq
+commit create destroy die start
+```
