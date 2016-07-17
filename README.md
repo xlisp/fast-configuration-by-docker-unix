@@ -143,4 +143,39 @@ drm () {
 ```bash
 $ docker events #==> docker events | sed 's/\(.*\)) \(.*\)/\2/' | sort | uniq
 commit create destroy die start
+
 ```
+/sections/show/2412
+
+
+* Docker containers report the following events:
+
+` attach, commit, copy, create, destroy, detach, die, exec_create, exec_detach, exec_start, export, kill, oom, pause, rename, resize, restart, start, stop, top, unpause, update ` 
+
+* Docker images report the following events:
+
+` delete, import, load, pull, push, save, tag, untag ` 
+
+* Docker volumes report the following events:
+
+` create, mount, unmount, destroy ` 
+
+* Docker networks report the following events:
+
+` create, connect, disconnect, destroy `
+
+* Docker daemon report the following events:
+
+` reload ` 
+
+eg : 
+
+```bash
+ docker events # all 
+
+ docker events --filter 'container=7805c1d35632' --filter 'event=stop'
+
+ docker events --since '2013-09-03T15:49:29'
+
+```
+
