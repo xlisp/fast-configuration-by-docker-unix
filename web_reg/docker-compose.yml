@@ -1,0 +1,8 @@
+web:
+  image: regsvcs-webui:latest
+  environment:
+    SERVICE_80_NAME: http
+    SERVICE_NAME: web
+    SERVICE_TAGS: backend
+  ports:
+  - "80"
