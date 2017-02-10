@@ -1,0 +1,11 @@
+alias v=' vi ~/.bashrc ; source ~/.bashrc '
+alias fg='find . -name '
+alias vs=' vi /opt/nginx/conf/vhosts/sounds.conf ; kill -9 \$(pgrep nginx) '
+
+#  while true;do curl 0.0.0.0:81/test -v > /dev/null ; done
+# while inotifywait -e close_write /opt/nginx/conf/vhosts/sounds.conf; do kill -9 $(pgrep nginx) ; done
+
+# while true;do curl 0.0.0.0:81/test -v 2>&1 | grep -E "^(< HTTP)" ; done
+
+# while true;do curl 0.0.0.0:81/test?key=http%3A%2F%2Fslimages.macys.com%2Fis%2Fimage%2FMCY%2Fproducts%2F1%2Foptimized%2F507081_fpx.tif%3Ftest%3D1 ; done
+

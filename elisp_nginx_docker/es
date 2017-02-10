@@ -1,0 +1,2 @@
+file=$1
+/usr/local/bin/emacs  --script $file 2>&1 

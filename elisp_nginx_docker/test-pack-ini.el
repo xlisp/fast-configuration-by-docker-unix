@@ -1,0 +1,7 @@
+(package-initialize)
+(require 'dash)
+(-each '(1 2 3 4 5 6)
+  (lambda (x)
+    (print x)
+    )
+  )
