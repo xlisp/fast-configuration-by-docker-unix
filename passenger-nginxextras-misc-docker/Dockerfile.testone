@@ -1,0 +1,15 @@
+FROM ruby:2.2.5-slim
+
+USER root
+
+RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 561F9B9CAC40B2F7 && \
+  apt-get update -qq && \
+  apt-get install -y build-essential libpq-dev \
+    nano wget dialog net-tools  gettext \
+    apt-transport-https ca-certificates nodejs \
+    bind9 bind9utils && \
+  ln -sf /usr/bin/nodejs /usr/local/bin/node && \
+  sh -c 'echo deb https://oss-binaries.phusionpassenger.com/apt/passenger jessie main > /etc/apt/sources.list.d/passenger.list' && \
+  apt-get update -qq && \
+  apt-get install -y  passenger && \
+  apt-get clean 
