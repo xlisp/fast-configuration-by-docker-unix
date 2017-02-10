@@ -1,4 +1,5 @@
-# fast configuration by docker: 让Docker每秒build十次, 每一次build成功的结果作为下一次build的Form, 如此递归build, 直到Fixed错误为止
+# 快速系统配置通过Docker
+### fast configuration by docker: 让Docker每秒build十次, 每一次build成功的结果作为下一次build的Form, 如此递归build, 直到Fixed错误为止
 
 - [服务端Dockerfile的生成](#%E6%9C%8D%E5%8A%A1%E7%AB%AFdockerfile%E7%9A%84%E7%94%9F%E6%88%90)
 - [客户端获取服务端的Dockerfile开始build](#%E5%AE%A2%E6%88%B7%E7%AB%AF%E8%8E%B7%E5%8F%96%E6%9C%8D%E5%8A%A1%E7%AB%AF%E7%9A%84dockerfile%E5%BC%80%E5%A7%8Bbuild)
