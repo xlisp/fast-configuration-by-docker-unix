@@ -1,0 +1,41 @@
+#!/usr/bin/env ruby
+# use : ag CSV app/controllers/ | method  #=>  ag format_type_and_values | v -f 
+# 可以把ag的命令化 转化为 树形结构的 数据  => Clojure 宏语言
+aglines = $stdin.read.split(/\n/)
+methods_hash = -> file_name {
+  methods = ` cat #{file_name} | grep  -nE 'def [a-z+]' `
+  mhash = {}
+  methods_line = methods.split(/\n/).each { |meth| 
+    m = meth.split(/:/)
+    b = m[1].split(/\s/) 
+    b.each_with_index { |value, index| @outb = b[index+1].split(/\(|\)/).first.gsub(/self\./, 'S') if value == "def" }
+    mhash.merge!(eval "{:#{@outb} => #{m[0]}}")
+  }
+  mhash
+}
+
+find_method_number = -> linenum {
+  -> mhash {
+    nums = mhash.map{|met| met.last}
+    nums = (nums << linenum ).sort
+    nums.each_with_index { |value, index|
+      @outs = nums[index-1] if value == linenum
+    }
+    mhash.select{|k,v| @outms = k if v == @outs}  
+    @outms
+  }
+}
+
+camelize = -> name { name.gsub(/^.|_./){ |match| match.size > 1 ? match[1].upcase : match.upcase } }
+
+aglines.each { |agline|
+  line = agline.split(/:([0-9]+):/)
+  file_name = line.first
+  line_number = line[1]
+  belong_method = find_method_number[line_number.to_i][ methods_hash[file_name] ]
+  if ARGV[0] == "-f"
+    puts file_name
+  else 
+    puts "===F:#{file_name}  N:#{line_number}  M:#{camelize[file_name.split(/\//).last.split(/\./).first]}#{belong_method.to_s.include?('S') ? '.' : '#'}#{belong_method.to_s.gsub(/S/,'')}  P:#{line.last}"
+  end
+}

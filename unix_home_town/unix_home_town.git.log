@@ -1,0 +1,71 @@
+commit aae87b0fbe4c94c22fda0a7dc751de7dd1ca7100
+Author: chenshunli <chenshunli@ulaiber.com>
+Date:   Fri Feb 10 12:13:01 2017 -0800
+
+    在手机上使用的网页命令
+
+commit eaac76dad6c258b5454b4ccfd2ed226d76e59f41
+Author: Steve Chan <chanshunli@gmail.com>
+Date:   Thu Feb 9 19:13:08 2017 -0800
+
+    Update README.md
+
+commit 0c2a28ab6542eebb03480a90105171315becf007
+Author: Steve Chan <chanshunli@gmail.com>
+Date:   Fri Mar 4 16:40:00 2016 +0800
+
+    Update method
+    
+    树形结构的 数据  => Clojure 宏语言
+
+commit f125af572699958502f9e509abfb82601ca586fc
+Author: chanshunli <chanshunli@gmail.com>
+Date:   Mon Sep 14 07:06:52 2015 +0800
+
+    Gemfile.lock归纳
+
+commit f650cb03b13ab4a70935e62d7c81885ce1ab9ffc
+Author: chanshunli <chanshunli@gmail.com>
+Date:   Tue Aug 25 11:37:02 2015 +0800
+
+    add   file list puts
+
+commit 86de3c808f418cf33fd830a054d6b2edc56509a7
+Author: chanshunli <chanshunli@gmail.com>
+Date:   Mon Aug 24 13:04:49 2015 +0800
+
+    解决 commit 不是 一行的
+    
+    fix
+    
+    fix
+
+commit 3cdd5952d327fd233536ab89b64ddb05cf0e5c2c
+Author: chanshunli <chanshunli@gmail.com>
+Date:   Mon Aug 24 11:27:27 2015 +0800
+
+    只是查看我曾经做过的哪些提交
+
+commit d653d04357754fef24421d8850161a22c11ab944
+Author: chanshunli <chanshunli@gmail.com>
+Date:   Wed Aug 19 17:38:33 2015 +0800
+
+    fix ren : nil erro
+
+commit 9055fda4c1c22896b2ac9605357f1fbf32aa111a
+Author: chanshunli <chanshunli@gmail.com>
+Date:   Tue Aug 18 10:10:05 2015 +0800
+
+     render: aliased to  ag render
+
+commit 2bc6043f7e01e7cadfa3c214a878a986715b6927
+Author: chanshunli <chanshunli@gmail.com>
+Date:   Sat Aug 15 10:03:10 2015 +0800
+
+    不要在项目里编程,顺着优点而下，几乎做所有事情都势如破竹
+
+commit 7381769e55c3c76dfcdd7cd25855db5aba4c0483
+Author: chanshunli <chanshunli@gmail.com>
+Date:   Sat Aug 15 10:00:08 2015 +0800
+
+    优点 就是 每个人的中线 ， 今天 自己写了 一个 xx 功能，一个半小时 我就 把它 全搞定了, 因为 有 巨大的 兴趣 ，几乎 做事 好不费力 , 平常我 的，一天都写不了 这么多代码，这么复杂的功能，因为 我 没有 完全 按照兴趣点的 方向来走

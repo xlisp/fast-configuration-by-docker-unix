@@ -1,0 +1,50 @@
+#!/usr/bin/env ruby
+# coding: utf-8
+# 这个有多行,要转化为一行
+contents = (` git log | grep -Env '^$|^Author:|^Date:|^Merge:' `).split(/\n/)
+inarrs = []
+contents.each_with_index { |value, index|
+  if value =~ /[0-9+]:commit/
+    #puts "===#{value}====#{index}==="
+    inarrs << index
+  end
+}
+find_no_two = -> arr {
+  obj_no_two = []
+  (arr.count-1).times { |tim|
+    obj_no_two << (arr[tim]..arr[tim+1]) #unless (arr[tim+1] - arr[tim] == 2 )
+  }
+  obj_no_two
+}
+
+newcommits = []
+(inarrs.count-2).times { |tim|
+  newcommits << contents[
+    find_no_two[inarrs][tim]
+  ][1..-2].join(',')
+}
+#puts newcommits , 以上很慢要全部重新生成comint array
+
+# 下面的都是只有一行的
+authors = (` git log | grep -En '^Author:' `).split(/\n/)
+keys = (` git log | grep -En '^commit' `).split(/\n/)
+
+patch = -> yarr {
+  -> obj {
+    arr = []
+    yarr.each_with_index { |value, index|
+      arr << index if value =~ /#{obj}/ 
+    }
+    arr
+  }
+}
+
+steves = patch[authors]["steve"] # 所有steve的提交次数55次
+
+outs = -> num {
+  "====#{keys[num]}----#{authors[num]}----#{newcommits[num]}"
+} #[1]
+steves.each { |num|
+  puts outs[num]
+}
+nil

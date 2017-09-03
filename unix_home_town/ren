@@ -1,0 +1,28 @@
+#!/usr/bin/env ruby
+# coding: utf-8
+# USE: render ./app/views/standard_products/index.js.erb | ren   #=>  -----["standard_products/editable_table", "standard_products/table"]----
+aglines = $stdin.read.split(/\n/)
+
+renders = -> aglines {
+  @renders = []
+  aglines.each { |line|
+    lin = line.split(/:([0-9]+):/) # ()保存数字
+    lins = lin.last.split(/\'|\"/)
+    lins.each_with_index { |v,k|
+      @renders << lins[k+1] if v.include? "render"
+    }
+  }
+  @renders
+}
+
+will_finds = renders[aglines]
+#puts "-----#{@renders}----"
+
+will_finds.each { |fg|
+  if fg.include? "/"
+    puts ` re #{fg} `
+    #puts `fr  `  fr "\.\/\(.*\)standard_products\/\(_*\)table\(.*\)" #=> ./app/views/standard_products/_table.html.erb
+  else
+    puts ` find . -name "*#{fg}*" `
+  end unless fg.nil?
+}

@@ -1,0 +1,9 @@
+<form name="f" id="form" action="/sa/search" class="fm" onsubmit="javascript:F.call('ps/sug','pssubmit');">
+  <input type="text" class="s_ipt" name="wd" id="kw" maxlength="100" cols="60" autocomplete="off" style="border: 1px solid #666666;background-color: #dddddd;color:#000000;">
+  <p></p><br>
+  <input type="submit" value="SearchOne" id="su" class="btn self-btn bg s_btn">
+</form>
+
+<%= @search_cmd %> :
+<br>
+<%= @result %>

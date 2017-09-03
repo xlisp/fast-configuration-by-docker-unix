@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+# coding: utf-8
+#aglines = $stdin.read.split(/\n/)
+renname = ARGV[0]
+names = renname.split(/\//)
+#puts /\.\/\(.*\)#{names[0]}\/\(_*\)#{names[1]}\(.*\)/ #=> (?-mix:\.\/\(.*\)standard_products\/\(_*\)table\(.*\))
+#fr "\.\/\(.*\)standard_products\/\(_*\)table\(.*\)" #=> ./app/views/standard_products/_table.html.erb
+# 注意puts的 "\" 要 全弄成 "\\"
+puts ` find . -regex  "\\.\\/\\(.*\\)#{names[0]}\\/\\(_*\\)#{names[1]}\\(.*\\)" `
